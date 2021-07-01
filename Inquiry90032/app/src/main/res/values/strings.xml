@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">お問い合わせ</string>
+    <string name="message">必要な情報を入力し、送信ボタンをクリックしてください。</string>
+    <string name="user_name">お名前</string>
+    <string name="user_mailaddress">メールアドレス</string>
+    <string name="detail">お問い合わせ内容</string>
+    <string name="submit">送信</string>
+</resources>
