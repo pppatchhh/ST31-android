@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ST31 Androidサンプル04 割り算計算機
+画面レイアウトファイル
+
+ファイル名=activity_main.xml
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/tv_nume"/>
+
+    <EditText
+        android:id="@+id/etNume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:inputType="number"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/tv_denomi"/>
+
+    <EditText
+        android:id="@+id/etDenomi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:inputType="number"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btCalc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="@string/bt_calc"/>
+
+        <Button
+            android:id="@+id/btClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bt_clear"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text=""
+        android:textSize="25sp"/>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<!--
+ST31 Androidサンプル04 割り算計算機
+res/values/string.xmlファイル
+-->
+<resources>
+    <string name="app_name">割算計算機</string>
+    <string name="tv_nume">分子を入力してください</string>
+    <string name="tv_denomi">分母を入力してください</string>
+    <string name="bt_calc">割算</string>
+    <string name="bt_clear">クリア</string>
+</resources>
