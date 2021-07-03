@@ -1,0 +1,9 @@
+<!--
+ST31 Androidサンプル02 ボタンクリック
+res/values/string.xmlファイル
+-->
+<resources>
+    <string name="app_name">ボタンクリックサンプル</string>
+    <string name="tv_name">お名前を入力してください。</string>
+    <string name="bt_click">表示</string>
+</resources>
