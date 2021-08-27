@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ST31 Androidサンプル06 インテント
+第2画面レイアウトファイル
+
+ファイル名=activity_show_ms.xml
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text=""
+        android:textSize="24sp"/>
+
+    <ImageView
+        android:id="@+id/ivSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/iv_selected"
+        android:src="@drawable/firstgundam"/>
+
+    <Button
+        android:id="@+id/btBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/bt_back"/>
+</LinearLayout>

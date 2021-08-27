@@ -1,0 +1,19 @@
+<!--
+ST31 Androidサンプル06 インテント
+res/values/string.xmlファイル
+-->
+<resources>
+    <!-- activity_main用 -->
+    <string name="app_name">MS選択</string>
+    <string name="tv_select">好きなガンダムを選択してください。</string>
+    <string-array name="lv_ms">
+        <item>ファースト</item>
+        <item>Z</item>
+        <item>ZZ</item>
+        <item>ν</item>
+        <item>ユニコーン</item>
+    </string-array>
+    <!-- activity_show_ms用 -->
+    <string name="iv_selected">選択されたガンダムの画像</string>
+    <string name="bt_back">もどる</string>
+</resources>
