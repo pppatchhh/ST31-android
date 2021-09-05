@@ -1,0 +1,9 @@
+<!--
+ST31 Androidサンプル07 Activityのライフサイクル
+res/values/string.xmlファイル
+-->
+<resources>
+    <string name="app_name">ライフサイクルサンプル</string>
+    <string name="bt_next">次の画面を表示</string>
+    <string name="bt_previous">前の画面を表示</string>
+</resources>
