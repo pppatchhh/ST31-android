@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ST31 Androidサンプル09 都道府県メモアプリ
+都道府県リスト画面レイアウトファイル
+
+ファイル名=activity_main.xml
+-->
+<ListView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lvPref"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>

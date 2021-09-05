@@ -1,0 +1,9 @@
+<!--
+ST31 Androidサンプル09 都道府県メモアプリ
+res/values/string.xmlファイル
+-->
+<resources>
+    <string name="app_name">都道府県メモ</string>
+    <string name="btn_save">保存</string>
+    <string name="tv_navi">メモ内容を入力してください。</string>
+</resources>
