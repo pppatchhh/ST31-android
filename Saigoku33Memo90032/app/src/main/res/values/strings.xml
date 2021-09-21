@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">三十三所巡礼管理</string>
+    <string name="btn_save">保存</string>
+    <string name="tv_priest_name">本尊名</string>
+    <string name="tv_mission">宗旨</string>
+    <string name="tv_address">所在地</string>
+    <string name="tv_url">URL</string>
+    <string name="tv_thoughts">感想</string>
     <string-array name="lv_menu">
         <item>第一番 　青岸渡寺</item>
         <item>第二番 　金剛宝寺</item>
