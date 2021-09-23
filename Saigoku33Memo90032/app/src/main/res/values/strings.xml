@@ -6,39 +6,4 @@
     <string name="tv_address">所在地</string>
     <string name="tv_url">URL</string>
     <string name="tv_thoughts">感想</string>
-    <string-array name="lv_menu">
-        <item>第一番 　青岸渡寺</item>
-        <item>第二番 　金剛宝寺</item>
-        <item>第三番 　粉河寺</item>
-        <item>第四番 　施福寺</item>
-        <item>第五番 　葛井寺</item>
-        <item>第六番 　南法華寺</item>
-        <item>第七番 　岡寺</item>
-        <item>第八番 　長谷寺</item>
-        <item>第九番 　南円堂</item>
-        <item>第十番 　三室戸寺</item>
-        <item>第十一番 　上醍醐 准胝堂</item>
-        <item>第十二番 　正法寺</item>
-        <item>第十三番 　石山寺</item>
-        <item>第十四番 　三井寺</item>
-        <item>第十五番 　今熊野観音寺</item>
-        <item>第十六番 　清水寺</item>
-        <item>第十七番 　六波羅蜜寺</item>
-        <item>第十八番 　六角堂 頂法寺</item>
-        <item>第十九番 　革堂 行願寺</item>
-        <item>第二十番 　善峯寺</item>
-        <item>第二十一番 　穴太寺</item>
-        <item>第二十二番 　総持寺</item>
-        <item>第二十三番 　勝尾寺</item>
-        <item>第二十四番 　中山寺</item>
-        <item>第二十五番 　播州清水寺</item>
-        <item>第二十六番 　一乗寺</item>
-        <item>第二十七番 　圓教寺</item>
-        <item>第二十八番 　成相寺</item>
-        <item>第二十九番 　松尾寺</item>
-        <item>第三十番 　宝厳寺</item>
-        <item>第三十一番 　長命寺</item>
-        <item>第三十二番 　観音正寺</item>
-        <item>第三十三番 　華厳寺</item>
-    </string-array>
 </resources>
