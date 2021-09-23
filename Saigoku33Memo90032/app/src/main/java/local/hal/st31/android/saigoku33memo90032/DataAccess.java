@@ -73,7 +73,7 @@ public class DataAccess {
         stmt.bindString(4, shushi);
         stmt.bindString(5, address);
         stmt.bindString(6, url);
-        stmt.bindString(8, note);
+        stmt.bindString(7, note);
         long insertedId = stmt.executeInsert();
         return insertedId;
     }

@@ -35,6 +35,17 @@ public class TempleEditActivity extends AppCompatActivity {
             String address = memo.getAddress();
             String url = memo.getUrl();
             String note = memo.getNote();
+
+            EditText etHonzon = findViewById(R.id.etHonson);
+            etHonzon.setText(honzon);
+            EditText etShushi = findViewById(R.id.etShushi);
+            etShushi.setText(shushi);
+            EditText etAddress = findViewById(R.id.etAddress);
+            etAddress.setText(address);
+            EditText etURL = findViewById(R.id.etURL);
+            etURL.setText(url);
+            EditText etNote = findViewById(R.id.etNote);
+            etNote.setText(note);
         }
     }
 
