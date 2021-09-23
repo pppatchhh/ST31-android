@@ -15,7 +15,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         StringBuilder sb = new StringBuilder();
-        sb.append("CREATE TABLE temples(");
+        sb.append("CREATE TABLE temples (");
         sb.append("_id INTEGER PRIMARY KEY, ");
         sb.append("name TEXT NOT NULL, ");
         sb.append("honzon TEXT, ");
@@ -24,6 +24,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sb.append("url TEXT, ");
         sb.append("note TEXT");
         sb.append(");");
+        String sql = sb.toString();
+
+        db.execSQL(sql);
     }
 
     @Override

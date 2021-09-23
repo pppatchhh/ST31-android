@@ -54,24 +54,26 @@ public class DataAccess {
         SQLiteStatement stmt = db.compileStatement(sql);
         stmt.bindString(1, name);
         stmt.bindString(2, honzon);
-        stmt.bindString(3, address);
-        stmt.bindString(4, url);
-        stmt.bindString(5, note);
-        stmt.bindLong(6, id);
+        stmt.bindString(3, shushi);
+        stmt.bindString(4, address);
+        stmt.bindString(5, url);
+        stmt.bindString(6, note);
+        stmt.bindLong(7, id);
 
         int result = stmt.executeUpdateDelete();
         return result;
     }
 
     public static long insert(SQLiteDatabase db, long id, String name, String honzon, String shushi, String address, String url, String note) {
-        String sql = "INSERT INTO temples (_id, name, honzon, address, url, note) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO temples (_id, name, honzon, shushi, address, url, note) VALUES (?, ?, ?, ?, ?, ?, ?)";
         SQLiteStatement stmt = db.compileStatement(sql);
         stmt.bindLong(1, id);
         stmt.bindString(2, name);
         stmt.bindString(3, honzon);
-        stmt.bindString(4, address);
-        stmt.bindString(5, url);
-        stmt.bindString(6, note);
+        stmt.bindString(4, shushi);
+        stmt.bindString(5, address);
+        stmt.bindString(6, url);
+        stmt.bindString(8, note);
         long insertedId = stmt.executeInsert();
         return insertedId;
     }
