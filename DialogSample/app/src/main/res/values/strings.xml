@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">DialogSample</string>
+    <string name="app_name">ダイアログサンプル</string>
+    <string name="btn_simple_dialog">シンプルなダイアログ表示</string>
+    <string name="btn_full_dialog">通常ダイアログ表示</string>
+    <string name="btn_msg_dialog">入力メッセージをダイアログ表示</string>
+    <string name="btn_timediff_dialog">経過時間ダイアログ表示</string>
+    <string name="btn_date_picker_dialog">日付選択ダイアログ表示</string>
+    <string name="btn_time_picker_dialog">時間選択ダイアログ表示</string>
+    <string name="dlg_btn_ok">OK</string>
+    <string name="dlg_btn_ng">NG</string>
+    <string name="dlg_btn_nu">\?\?</string>
+    <string name="dlg_btn_cancel">キャンセル</string>
+    <string name="dlg_simple_msg">ダメでしょ!</string>
+    <string name="dlg_simple_toast">シンプルなダイアログ: OKが選択されました。</string>
+    <string name="dlg_full_title">通常ダイアログ</string>
+    <string name="dlg_full_msg">よろしいですか?</string>
+    <string name="dlg_full_toast_ok">通常ダイアログ: OKが選択されました。</string>
+    <string name="dlg_full_toast_ng">通常ダイアログ: NGが選択されました。</string>
+    <string name="dlg_full_toast_nu">通常ダイアログ: ??が選択されました。</string>
+    <string name="dlg_msg_msg">入力メッセージ</string>
+    <string name="dlg_msg_btn">確認</string>
 </resources>
