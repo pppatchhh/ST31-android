@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">お気に入り店</string>
-    <string name="tv_title_list"></string>
+    <string name="tv_title_list">お気に入り店リスト</string>
     <string name="btn_new">新規</string>
     <string name="tv_title_edit">編集</string>
     <string name="tv_title_insert">登録</string>
-    <string name="tiv_input_name">店名</string>
+    <string name="tv_input_name">店名</string>
     <string name="tv_input_tel">Tel</string>
     <string name="tv_input_memo">メモ</string>
     <string name="btn_save">更新</string>

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FavoriteShops90032">
         <activity
+            android:name=".ShopEditActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
