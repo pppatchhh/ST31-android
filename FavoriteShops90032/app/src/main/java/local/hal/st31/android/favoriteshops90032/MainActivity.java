@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Cursor cursor = DataAccess.findAll(db);
         String[] from = { "name" };
         int[] to = { android.R.id.text1 };
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(MainActivity.this, android.R.layout.simple_list_item_1, cursor, from , to, 0);
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(MainActivity.this, android.R.layout.simple_list_item_1, cursor, from, to, 0);
         _lvShopList.setAdapter(adapter);
 
     }
@@ -46,6 +47,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void onNewButtonClick(View view){
         Intent intent = new Intent(MainActivity.this, ShopEditActivity.class);
+        intent.putExtra("mode", MODE_INSERT);
+        startActivity(intent);
+    }
+    private class ListItemClickListener implements AdapterView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+            Cursor item = (Cursor) parent.getItemAtPosition(position);
+            int idxId = item.getColumnIndex("_id");
+            long idNo = item.getLong(idxId);
+
+            Intent intent = new Intent(MainActivity.this, ShopEditActivity.class);
+            intent.putExtra("mode", MODE_EDIT);
+            intent.putExtra("idNo", idNo);
+            startActivity(intent);
+        }
 
     }
 }

@@ -6,7 +6,8 @@
     <string name="tv_title_insert">登録</string>
     <string name="tv_input_name">店名</string>
     <string name="tv_input_tel">Tel</string>
-    <string name="tv_input_memo">メモ</string>
+    <string name="tv_input_url">URL</string>
+    <string name="tv_input_note">メモ</string>
     <string name="btn_save">更新</string>
     <string name="btn_insert">登録</string>
     <string name="btn_back">戻る</string>
