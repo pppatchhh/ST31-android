@@ -5,7 +5,7 @@
     <string name="tv_title_edit">編集</string>
     <string name="tv_title_insert">登録</string>
     <string name="tv_input_name">店名</string>
-    <string name="tv_input_tel">Tel</string>
+    <string name="tv_input_tel">電話番号</string>
     <string name="tv_input_url">URL</string>
     <string name="tv_input_note">メモ</string>
     <string name="btn_save">更新</string>
