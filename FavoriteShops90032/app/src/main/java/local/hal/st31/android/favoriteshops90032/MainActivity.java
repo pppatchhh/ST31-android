@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -27,6 +30,20 @@ public class MainActivity extends AppCompatActivity {
         _helper = new DatabaseHelper(MainActivity.this);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_options_activity_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent intent = new Intent(MainActivity.this, ShopEditActivity.class);
+        intent.putExtra("mode", MODE_INSERT);
+        startActivity(intent);
+        return super.onOptionsItemSelected(item);
+    }
     @Override
     protected void onResume(){
         super.onResume();
