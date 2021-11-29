@@ -14,6 +14,11 @@ public class DeleteDialogFragment extends DialogFragment {
     private DatabaseHelper _helper;
     private long _idNo = 0;
 
+    public DeleteDialogFragment(DatabaseHelper helper){
+       _helper = helper;
+    }
+
+
     @Override
     public Dialog onCreateDialog(Bundle saveInstanceState){
         Activity parent = getActivity();
@@ -32,7 +37,6 @@ public class DeleteDialogFragment extends DialogFragment {
             Activity parent = getActivity();
             switch(which){
                 case DialogInterface.BUTTON_POSITIVE:
-                    _helper = new DatabaseHelper(parent.getApplicationContext());
                     SQLiteDatabase db = _helper.getWritableDatabase();
                     Bundle extras = getArguments();
                     if(extras != null){
@@ -45,5 +49,6 @@ public class DeleteDialogFragment extends DialogFragment {
                     break;
             }
         }
+
     }
 }

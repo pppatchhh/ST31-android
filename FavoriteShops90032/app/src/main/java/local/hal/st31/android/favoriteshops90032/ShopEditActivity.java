@@ -20,13 +20,14 @@ public class ShopEditActivity extends AppCompatActivity {
     private int _mode = MainActivity.MODE_INSERT;
     private long _idNo = 0;
     private DatabaseHelper _helper;
-    private DeleteDialogFragment dialog = new DeleteDialogFragment();
+    private DeleteDialogFragment dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop_edit);
         _helper = new DatabaseHelper(ShopEditActivity.this);
+        dialog = new DeleteDialogFragment(_helper);
         Intent intent = getIntent();
         _mode = intent.getIntExtra("mode", MainActivity.MODE_INSERT);
         ActionBar actionBar = getSupportActionBar();
