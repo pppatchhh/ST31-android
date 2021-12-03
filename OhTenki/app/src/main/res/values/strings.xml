@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">OhTenki</string>
+    <string name="app_name">Oh!天気</string>
+    <string name="btn_dialog_positive">確認</string>
 </resources>

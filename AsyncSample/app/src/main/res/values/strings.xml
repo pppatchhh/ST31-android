@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">AsyncSample</string>
+    <string name="app_name">非同期サンプル</string>
+    <string name="btn_start">処理開始</string>
 </resources>
