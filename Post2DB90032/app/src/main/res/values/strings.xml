@@ -7,10 +7,9 @@
     <string name="tv_message">しんちゃんへのメッセージを入力してください。</string>
     <string name="bt_send">送信</string>
     <string name="dlg_title">入力されたもの</string>
-    <string name="dlg_msg_lastname">姓: </string>
-    <string name="dlg_msg_firstname">名: </string>
+    <string name="dlg_msg_name">名前: </string>
     <string name="dlg_msg_studentid">学籍番号: </string>
-    <string name="dlg_msg_seano">出席番号: </string>
+    <string name="dlg_msg_seatno">出席番号: </string>
     <string name="dlg_msg_msg">メッセージ: </string>
     <string name="msg_err_send">サーバ通信に失敗しました。もう一度送信をお願いします。</string>
     <string name="msg_err_timeout">サーバ通信がタイムアウトしました。もう一度送信をお願いします。</string>
