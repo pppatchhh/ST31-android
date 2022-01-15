@@ -4,6 +4,7 @@ import androidx.annotation.UiThread;
 import androidx.annotation.WorkerThread;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.os.HandlerCompat;
+import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -45,9 +46,6 @@ public class MainActivity extends AppCompatActivity {
         EditText etStudentid = findViewById(R.id.etStudentid);
         EditText etSeatno = findViewById(R.id.etSeatno);
         EditText etMessage = findViewById(R.id.etMessage);
-        TextView tvResult = findViewById(R.id.tvResult);
-
-        tvResult.setText("");
 
         String lastname = etLastname.getText().toString();
         String firstname = etFirstname.getText().toString();
@@ -94,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
             InputStream is = null;
             String result = "";
             boolean success = false;
-
             try {
                 URL url = new URL(_url);
                 con = (HttpURLConnection) url.openConnection();
@@ -170,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
             public void run(){
                 String message = _result;
                 if(_success){
+
                     String name = "";
                     String studentid = "";
                     String seatno = "";
@@ -194,12 +192,18 @@ public class MainActivity extends AppCompatActivity {
                     message = getString(R.string.dlg_msg_name) + name + "\n"
                             + getString(R.string.dlg_msg_studentid) + studentid + "\n"
                             + getString(R.string.dlg_msg_seatno) + seatno + "\n"
-                            + getString(R.string.dlg_msg_msg) + msg;
+                            + getString(R.string.dlg_msg_status) + status + "\n"
+                            + getString(R.string.dlg_msg_msg) + msg + "\n"
+                            + getString(R.string.dlg_msg_serialno) + serialno + "\n"
+                            + getString(R.string.dlg_msg_timestamp) + timestamp;
                 }
-                TextView tvResult = findViewById(R.id.tvResult);
-                tvResult.setText(message);
+                ResultDialogFragment dialog = new ResultDialogFragment();
+                Bundle extras = new Bundle();
+                extras.putString("message", message);
+                dialog.setArguments(extras);
+                FragmentManager manager = getSupportFragmentManager();
+                dialog.show(manager, "ResultDialogFragment");
             }
         }
-
     }
 }

@@ -10,8 +10,13 @@
     <string name="dlg_msg_name">名前: </string>
     <string name="dlg_msg_studentid">学籍番号: </string>
     <string name="dlg_msg_seatno">出席番号: </string>
+    <string name="dlg_msg_status">ステータス: </string>
     <string name="dlg_msg_msg">メッセージ: </string>
+    <string name="dlg_msg_serialno">シリアルナンバー: </string>
+    <string name="dlg_msg_timestamp">タイムスタンプ: </string>
     <string name="msg_err_send">サーバ通信に失敗しました。もう一度送信をお願いします。</string>
     <string name="msg_err_timeout">サーバ通信がタイムアウトしました。もう一度送信をお願いします。</string>
     <string name="msg_err_parse">サーバからの返信内容の解析に失敗しました。もう一度送信をお願いします。</string>
+    <string name="dlg_btn_close">閉じる</string>
+    <string name="dlg_msg_title">送信結果</string>
 </resources>
