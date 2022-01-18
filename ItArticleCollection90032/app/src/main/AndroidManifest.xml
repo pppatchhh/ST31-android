@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ItArticleCollection90032">
         <activity
+            android:name=".ArticleDetailActivity"
+            android:exported="true" />
+        <activity
             android:name=".ArticleAddActivity"
             android:exported="true" />
         <activity

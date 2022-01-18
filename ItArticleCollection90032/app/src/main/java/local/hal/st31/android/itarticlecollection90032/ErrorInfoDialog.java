@@ -14,7 +14,7 @@ public class ErrorInfoDialog extends DialogFragment {
         String msg = extras.getString("msg");
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("エラー");
+        builder.setTitle(R.string.msg_dialog_title);
         builder.setMessage(msg);
         builder.setPositiveButton(R.string.btn_dialog_positive, new DialogButtonClickListener());
         AlertDialog dialog = builder.create();
