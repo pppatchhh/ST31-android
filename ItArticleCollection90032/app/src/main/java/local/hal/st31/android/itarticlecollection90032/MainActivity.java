@@ -9,7 +9,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -21,6 +25,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.SocketTimeoutException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -33,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ListView lvArticle = findViewById(R.id.lvArticle);
     }
 
     @UiThread
@@ -119,16 +127,26 @@ public class MainActivity extends AppCompatActivity {
         public void run(){
             String status = "";
             String msg = "";
+            JSONArray listJSONArray = new JSONArray();
+            List<Map<String, String>> articleList = new ArrayList<>();
             try {
                 JSONObject rootJSON = new JSONObject(_result);
                 status = rootJSON.getString("status");
                 msg = rootJSON.getString("msg");
+                listJSONArray = rootJSON.getJSONArray("list");
 
+                for(int i = 0; i < listJSONArray.length(); i ++){
+                    Map<String, String> map = new HashMap<>();
+                    map.put("title", listJSONArray.getJSONObject(i).getString("title"));
+                    articleList.add(map);
+                }
             }
             catch (JSONException ex){
                 Log.e(DEBUG_LOG, "JSON解析失敗", ex);
             }
-
+            String[] from = {"title"};
+            int[] to = {android.R.id.text1};
+            SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), articleList, android.R.layout.simple_list_item_1, from, to);
         }
     }
 }
