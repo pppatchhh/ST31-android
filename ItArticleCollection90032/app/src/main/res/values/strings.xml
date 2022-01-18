@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">共有IT記事</string>
     <string name="btn_new">投稿</string>
+    <string name="tv_title">タイトル</string>
+    <string name="tv_url">URL</string>
+    <string name="tv_comment">コメント</string>
+    <string name="bt_send">送信</string>
+    <string name="msg_err_send">サーバ通信に失敗しました。もう一度送信をお願いします。</string>
+    <string name="msg_err_timeout">サーバ通信がタイムアウトしました。もう一度送信をお願いします。</string>
+    <string name="msg_err_parse">サーバからの返信内容の解析に失敗しました。もう一度送信をお願いします。</string>
+    <string name="btn_dialog_positive">閉じる</string>
 </resources>
