@@ -3,6 +3,7 @@ package local.hal.st31.android.itarticlecollection90032;
 import androidx.annotation.UiThread;
 import androidx.annotation.WorkerThread;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.os.ExecutorCompat;
 import androidx.core.os.HandlerCompat;
 
 import android.os.Bundle;
@@ -29,6 +30,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
     private static final String ACCESS_URL = "https://hal.architshin.com/st31/getItArticlesList.php";
@@ -40,14 +43,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListView lvArticle = findViewById(R.id.lvArticle);
+        receiveArticleList(ACCESS_URL);
     }
 
     @UiThread
     private void receiveArticleList(final String url){
         Looper mainLooper = Looper.getMainLooper();
         Handler handler = HandlerCompat.createAsync(mainLooper);
-
+        ArticleListBackgroundReceiver backgroundReceiver = new ArticleListBackgroundReceiver(handler, url);
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        executorService.submit(backgroundReceiver);
     }
 
     private class ArticleListBackgroundReceiver implements Runnable {
@@ -101,6 +106,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
+            ArticleListPostExecutor postExecutor = new ArticleListPostExecutor(result);
+            _handler.post(postExecutor);
         }
 
         private String is2String(InputStream is) throws IOException{
@@ -147,6 +154,8 @@ public class MainActivity extends AppCompatActivity {
             String[] from = {"title"};
             int[] to = {android.R.id.text1};
             SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), articleList, android.R.layout.simple_list_item_1, from, to);
+            ListView lvArticle = findViewById(R.id.lvArticle);
+            lvArticle.setAdapter(adapter);
         }
     }
 }
