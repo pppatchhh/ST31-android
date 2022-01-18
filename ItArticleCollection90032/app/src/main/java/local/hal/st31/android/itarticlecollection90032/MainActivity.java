@@ -6,10 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.os.ExecutorCompat;
 import androidx.core.os.HandlerCompat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -146,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
                     Map<String, String> map = new HashMap<>();
                     map.put("title", listJSONArray.getJSONObject(i).getString("title"));
                     map.put("name", listJSONArray.getJSONObject(i).getString("last_name") + " " + listJSONArray.getJSONObject(i).getString("first_name"));
+                    map.put("url", listJSONArray.getJSONObject(i).getString("url"));
                     articleList.add(map);
                 }
             }
@@ -159,4 +165,19 @@ public class MainActivity extends AppCompatActivity {
             lvArticle.setAdapter(adapter);
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_options_activity_main,  menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent intent = new Intent(MainActivity.this, ArticleAddActivity.class);
+        startActivity(intent);
+        return super.onOptionsItemSelected(item);
+    }
+
 }

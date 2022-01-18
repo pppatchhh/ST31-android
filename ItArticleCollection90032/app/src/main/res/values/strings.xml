@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">共有IT記事</string>
+    <string name="btn_new">投稿</string>
 </resources>
