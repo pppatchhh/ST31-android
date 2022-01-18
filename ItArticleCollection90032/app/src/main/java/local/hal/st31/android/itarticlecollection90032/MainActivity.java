@@ -35,7 +35,7 @@ import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
     private static final String ACCESS_URL = "https://hal.architshin.com/st31/getItArticlesList.php";
-    private static final String DEBUG_LOG = "ItArticleColleection";
+    private static final String DEBUG_LOG = "ItArticleCollection";
     private List<Map<String, String>> _list;
 
     @Override
@@ -145,15 +145,16 @@ public class MainActivity extends AppCompatActivity {
                 for(int i = 0; i < listJSONArray.length(); i ++){
                     Map<String, String> map = new HashMap<>();
                     map.put("title", listJSONArray.getJSONObject(i).getString("title"));
+                    map.put("name", listJSONArray.getJSONObject(i).getString("last_name") + " " + listJSONArray.getJSONObject(i).getString("first_name"));
                     articleList.add(map);
                 }
             }
             catch (JSONException ex){
                 Log.e(DEBUG_LOG, "JSON解析失敗", ex);
             }
-            String[] from = {"title"};
-            int[] to = {android.R.id.text1};
-            SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), articleList, android.R.layout.simple_list_item_1, from, to);
+            String[] from = {"title", "name"};
+            int[] to = {android.R.id.text1, android.R.id.text2};
+            SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), articleList, android.R.layout.simple_list_item_2, from, to);
             ListView lvArticle = findViewById(R.id.lvArticle);
             lvArticle.setAdapter(adapter);
         }
