@@ -133,32 +133,14 @@ public class ArticleAddActivity extends AppCompatActivity {
             catch(SocketTimeoutException ex){
                 result = getString(R.string.msg_err_timeout);
                 Log.e(DEBUG_LOG, "タイムアウト", ex);
-                ErrorInfoDialog dialog = new ErrorInfoDialog();
-                Bundle extras = new Bundle();
-                extras.putString("msg", result);
-                dialog.setArguments(extras);
-                FragmentManager manager = getSupportFragmentManager();
-                dialog.show(manager, "ErrorInfoDialog");
             }
             catch(MalformedURLException ex){
                 result = getString(R.string.msg_err_send);
                 Log.e(DEBUG_LOG, "URL変換失敗", ex);
-                ErrorInfoDialog dialog = new ErrorInfoDialog();
-                Bundle extras = new Bundle();
-                extras.putString("msg", result);
-                dialog.setArguments(extras);
-                FragmentManager manager = getSupportFragmentManager();
-                dialog.show(manager, "ErrorInfoDialog");
             }
             catch(IOException ex){
                 result = getString(R.string.msg_err_send);
                 Log.e(DEBUG_LOG, "通信失敗", ex);
-                ErrorInfoDialog dialog = new ErrorInfoDialog();
-                Bundle extras = new Bundle();
-                extras.putString("msg", result);
-                dialog.setArguments(extras);
-                FragmentManager manager = getSupportFragmentManager();
-                dialog.show(manager, "ErrorInfoDialog");
             }
             finally {
                 if(con != null){
@@ -172,12 +154,6 @@ public class ArticleAddActivity extends AppCompatActivity {
                 catch (IOException ex){
                     result = getString(R.string.msg_err_send);
                     Log.e(DEBUG_LOG, "InputStream解放失敗", ex);
-                    ErrorInfoDialog dialog = new ErrorInfoDialog();
-                    Bundle extras = new Bundle();
-                    extras.putString("msg", result);
-                    dialog.setArguments(extras);
-                    FragmentManager manager = getSupportFragmentManager();
-                    dialog.show(manager, "ErrorInfoDialog");
                 }
             }
             PostExecutor postExecutor = new PostExecutor(result,  success);
@@ -234,15 +210,18 @@ public class ArticleAddActivity extends AppCompatActivity {
                 catch(JSONException ex){
                     message = getString(R.string.msg_err_parse);
                     Log.e(DEBUG_LOG, "JSON解析失敗", ex);
+                }
+                if(Integer.parseInt(status) == 1){
+                    finish();
+                } else {
                     ErrorInfoDialog dialog = new ErrorInfoDialog();
                     Bundle extras = new Bundle();
-                    extras.putString("msg", message);
+                    extras.putString("msg", msg);
                     dialog.setArguments(extras);
                     FragmentManager manager = getSupportFragmentManager();
                     dialog.show(manager, "ErrorInfoDialog");
                 }
             }
-            finish();
         }
     }
 }
