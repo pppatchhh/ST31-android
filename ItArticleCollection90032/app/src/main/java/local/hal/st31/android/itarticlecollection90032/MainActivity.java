@@ -7,6 +7,7 @@ import androidx.core.os.ExecutorCompat;
 import androidx.core.os.HandlerCompat;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -15,6 +16,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -155,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
                     Map<String, String> map = new HashMap<>();
                     map.put("title", listJSONArray.getJSONObject(i).getString("title"));
                     map.put("name", listJSONArray.getJSONObject(i).getString("last_name") + " " + listJSONArray.getJSONObject(i).getString("first_name"));
-                    map.put("url", listJSONArray.getJSONObject(i).getString("url"));
+                    map.put("id", listJSONArray.getJSONObject(i).getString("id"));
                     articleList.add(map);
                 }
             }
@@ -167,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
             SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), articleList, android.R.layout.simple_list_item_2, from, to);
             ListView lvArticle = findViewById(R.id.lvArticle);
             lvArticle.setAdapter(adapter);
+            lvArticle.setOnItemClickListener(new ListItemClickListener());
         }
     }
 
@@ -184,4 +188,13 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private class ListItemClickListener implements AdapterView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+            Map<String, String> article = (Map<String, String>) parent.getItemAtPosition(position);
+            Intent intent = new Intent(getApplicationContext(), ArticleDetailActivity.class);
+            intent.putExtra("id", Integer.parseInt(article.get("id")));
+            startActivity(intent);
+        }
+    }
 }

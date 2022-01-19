@@ -63,7 +63,7 @@ public class ArticleAddActivity extends AppCompatActivity {
 
         String title = etTitle.getText().toString();
         String url =  etUrl.getText().toString();
-        String comment = etUrl.getText().toString();
+        String comment = etComment.getText().toString();
 
         postAccess(ACCESS_URL, title, url, comment);
     }
