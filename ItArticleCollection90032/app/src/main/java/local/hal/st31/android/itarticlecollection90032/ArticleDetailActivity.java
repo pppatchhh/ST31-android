@@ -7,11 +7,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.os.HandlerCompat;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -33,6 +35,7 @@ import java.util.concurrent.Executors;
 
 public class ArticleDetailActivity extends AppCompatActivity {
     private int  _selectedId = 0;
+    private String _articleUrl = "";
     private static final String ACCESS_URL = "https://hal.architshin.com/st31/getOneArticle.php";
     private static  final String DEBUG_LOG = "ItArticleCollection";
 
@@ -58,6 +61,10 @@ public class ArticleDetailActivity extends AppCompatActivity {
             case android.R.id.home:
                 finish();
                 return true;
+            default:
+                Uri uri = Uri.parse(_articleUrl);
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -157,7 +164,6 @@ public class ArticleDetailActivity extends AppCompatActivity {
             String lastName = "";
             String firstName = "";
             String createdAt =  "";
-            JSONArray articleJSONArray = new JSONArray();
             try {
                 JSONObject rootJSON = new JSONObject(_result).getJSONArray("article").getJSONObject(0);
                 id = rootJSON.getString("id");
@@ -193,6 +199,14 @@ public class ArticleDetailActivity extends AppCompatActivity {
             tvFirstName.setText(firstName);
             tvCreatedAt.setText(createdAt);
 
+            _articleUrl = url;
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_options_activity_article_detail, menu);
+        return true;
     }
 }

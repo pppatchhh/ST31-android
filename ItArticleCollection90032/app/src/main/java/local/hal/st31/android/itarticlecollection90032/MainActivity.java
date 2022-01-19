@@ -144,14 +144,10 @@ public class MainActivity extends AppCompatActivity {
         @UiThread
         @Override
         public void run(){
-            String status = "";
-            String msg = "";
-            JSONArray listJSONArray = new JSONArray();
+            JSONArray listJSONArray;
             List<Map<String, String>> articleList = new ArrayList<>();
             try {
                 JSONObject rootJSON = new JSONObject(_result);
-                status = rootJSON.getString("status");
-                msg = rootJSON.getString("msg");
                 listJSONArray = rootJSON.getJSONArray("list");
 
                 for(int i = 0; i < listJSONArray.length(); i ++){

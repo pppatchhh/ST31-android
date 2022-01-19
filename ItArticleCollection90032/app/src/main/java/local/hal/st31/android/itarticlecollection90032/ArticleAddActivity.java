@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -186,26 +188,12 @@ public class ArticleAddActivity extends AppCompatActivity {
         public void  run(){
             String message = _result;
             if(_success){
-                String title = "";
-                String url = "";
-                String comment = "";
-                String name = "";
-                String studentid = "";
-                String seatno = "";
                 String status = "";
                 String msg = "";
-                String timestamp = "";
                 try{
                     JSONObject rootJSON = new JSONObject(_result);
-                    title = rootJSON.getString("title");
-                    url = rootJSON.getString("url");
-                    comment = rootJSON.getString("comment");
-                    name = rootJSON.getString("name");
-                    studentid = rootJSON.getString("studentid");
-                    seatno = rootJSON.getString("seatno");
                     status = rootJSON.getString("status");
                     msg = rootJSON.getString("msg");
-                    timestamp = rootJSON.getString("timestamp");
                 }
                 catch(JSONException ex){
                     message = getString(R.string.msg_err_parse);
