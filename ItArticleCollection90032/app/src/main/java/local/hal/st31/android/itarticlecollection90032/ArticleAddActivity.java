@@ -49,25 +49,30 @@ public class ArticleAddActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_options_activity_article_add,  menu);
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
                 return true;
+            default:
+                EditText etTitle = findViewById(R.id.etTitle);
+                EditText etUrl = findViewById(R.id.etUrl);
+                EditText etComment = findViewById(R.id.etComment);
+
+                String title = etTitle.getText().toString();
+                String url =  etUrl.getText().toString();
+                String comment = etComment.getText().toString();
+
+                postAccess(ACCESS_URL, title, url, comment);
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    public void sendButtonClick(View view){
-        EditText etTitle = findViewById(R.id.etTitle);
-        EditText etUrl = findViewById(R.id.etUrl);
-        EditText etComment = findViewById(R.id.etComment);
-
-        String title = etTitle.getText().toString();
-        String url =  etUrl.getText().toString();
-        String comment = etComment.getText().toString();
-
-        postAccess(ACCESS_URL, title, url, comment);
     }
 
     @UiThread
